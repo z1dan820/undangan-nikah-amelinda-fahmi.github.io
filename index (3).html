@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0f0f0f" />
+  <title>Wedding Invitation - Amel & Fahmi</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    * { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: #0f0f0f; color: white; overflow-x: hidden; }
+    body::-webkit-scrollbar { display: none; }
+    .title-font { font-family: 'Cormorant Garamond', serif; }
+    .gold { color: #d4af37; }
+    .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.08); }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8)), url('./bg.jpg');
+      background-size: cover; background-position: center;
+    }
+    .swiper-slide img { height: 500px; object-fit: cover; border-radius: 24px; }
+    .swiper-pagination-bullet { background: rgba(255,255,255,0.3) !important; opacity: 1 !important; }
+    .swiper-pagination-bullet-active { background: #d4af37 !important; }
+    .swiper-button-next, .swiper-button-prev { color: rgba(255,255,255,0.6) !important; transform: scale(0.6); }
+  </style>
+</head>
+<body>
+
+  <section id="opening" class="fixed inset-0 bg-black z-50 flex items-center justify-center flex-col text-center px-6 transition-opacity duration-500">
+    <p class="uppercase tracking-[6px] text-sm text-gray-400 mb-3">The Wedding Of</p>
+    <h1 class="title-font text-5xl gold font-bold mb-4 text-balance">Amel & Fahmi</h1>
+    <div id="guestName" class="mb-8 text-lg"></div>
+    <button onclick="openInvitation()" class="px-8 py-4 rounded-full bg-yellow-600 hover:bg-yellow-500 transition text-black font-semibold shadow-lg">
+      Buka Undangan
+    </button>
+  </section>
+
+  <audio id="music" loop>
+    <source src="2.mp3" type="audio/mpeg">
+  </audio>
+
+  <section class="hero min-h-screen flex items-center justify-center text-center px-6 relative">
+    <div class="z-10 w-full">
+      <p class="uppercase tracking-[6px] text-sm text-gray-300 mb-3">Wedding Invitation</p>
+      <h1 class="title-font text-6xl gold font-bold mb-4 leading-tight">Amelinda <br>& Fahmi</h1>
+            <h1 class="">
+        بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
+      </h1>
+      <p class="text-gray-300 max-w-xl mx-auto mb-24 px-4 text-sm md:text-base">
+        Dengan memohon Rahmat dan Ridho Allah SWT, kami sekeluarga bermaksud mengundang Anda untuk hadir dalam hari bahagia kami.
+      </p>
+    </div>
+
+    <div id="scrollIndicator" class="absolute bottom-16 left-0 w-full z-40 animate-bounce flex flex-col items-center justify-center pointer-events-none transition-opacity duration-300">
+      <div class="flex flex-col items-center text-white/70 text-sm tracking-[4px] uppercase">
+        <span>Scroll</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 mt-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-6 text-center max-w-4xl mx-auto">
+    <p class="italic text-gray-400 mb-10 leading-relaxed text-sm">
+      "Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah izinkanlah putra-putri kami..."
+    </p>
+    
+    <div class="space-y-12">
+      <div>
+        <h2 class="title-font text-4xl gold font-bold mb-2">Amelinda Sinaga</h2>
+        <p class="text-sm text-gray-400 px-4 text-balance">Anak Pertama dari Bpk. (Alm) Ahadi Sinaga & Ibu Mardianis Chaniago</p>
+      </div>
+      <div class="title-font text-3xl gold">dengan</div>
+      <div>
+        <h2 class="title-font text-4xl gold font-bold mb-2">Khoirul Fahmi Simangunsong</h2>
+        <p class="text-sm text-gray-400 px-4 text-balance">Anak Keenam dari Bpk. (Alm) Uni Soviet Simangunsong & Ibu Jamrah Hasibuan</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-6">
+    <h2 class="title-font text-5xl gold text-center mb-16">Gallery Kami</h2>
+    <div class="relative max-w-6xl mx-auto px-6 md:px-16">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./a.jpg" class="w-full" /></div>
+          <div class="swiper-slide"><img src="./b.jpg" class="w-full" /></div>
+          <div class="swiper-slide"><img src="./c.jpg" class="w-full" /></div>
+          <div class="swiper-slide"><img src="./d.jpg" class="w-full" /></div>
+          <div class="swiper-slide"><img src="./e.jpg" class="w-full" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="swiper-button-next hidden md:flex"></div>
+      <div class="swiper-button-prev hidden md:flex"></div>
+    </div>
+  </section>
+
+  <section class="py-20 px-6 text-center glass mx-6 rounded-3xl">
+    <h2 class="title-font text-4xl gold mb-10">Menuju Hari Bahagia</h2>
+    <div id="countdown" class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto"></div>
+  </section>
+
+  <section class="py-24 px-6 max-w-5xl mx-auto">
+    <h2 class="title-font text-5xl gold text-center mb-16">Our Story</h2>
+    <div class="space-y-8">
+      <div class="glass p-8 rounded-3xl">
+        <h3 class="text-2xl gold mb-3 font-semibold">2024 — Awal Pertemuan</h3>
+        <p class="text-gray-300 leading-8 text-sm md:text-base">
+          Takdir mempertemukan kami di tempat yang sama. Berawal dari rekan kerja, kami mulai saling mengenal dan merasa dekat satu sama lain. Di tengah dunia yang terkadang terasa sangat berat, kami menemukan kenyamanan saat bersama.
+        </p>
+      </div>
+      <div class="glass p-8 rounded-3xl">
+        <h3 class="text-2xl gold mb-3 font-semibold">2026 — Langkah Baru</h3>
+        <p class="text-gray-300 leading-8 text-sm md:text-base">
+          Setelah melewati berbagai cerita, kami memantapkan hati untuk melangkah lebih jauh. Di tahun ini, kami memutuskan untuk mengikat janji dalam sebuah lamaran untuk membangun masa depan bersama.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 px-6 max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+    <div class="glass p-10 rounded-3xl text-center border-t-4 border-yellow-600">
+      <h3 class="title-font text-4xl gold mb-6">Akad Nikah</h3>
+      <p class="font-bold">Sabtu, 16 Mei 2026</p>
+      <p class="mb-4 text-sm font-medium">Pukul: 09.00 WIB</p>
+      <p class="text-gray-300 text-sm italic">Huta 1 Bandar Rawa <br> Nagori Bandar Gunung</p>
+    </div>
+    <div class="glass p-10 rounded-3xl text-center border-t-4 border-yellow-600">
+      <h3 class="title-font text-4xl gold mb-6">Resepsi</h3>
+      <p class="font-bold">Sabtu, 16 Mei 2026</p>
+      <p class="mb-4 text-sm font-medium">Pukul: 09.00 WIB s/d Selesai</p>
+      <p class="text-gray-300 text-sm italic">Huta 1 Bandar Rawa <br> Nagori Bandar Gunung</p>
+    </div>
+  </section>
+
+  <section class="py-24 px-6 text-center">
+    <h2 class="title-font text-5xl gold mb-10">Lokasi Acara</h2>
+    <div class="max-w-5xl mx-auto rounded-3xl overflow-hidden glass shadow-2xl">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3983.315893289611!2d99.2764936516103!3d3.2715820371684283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMTYnMTkuMyJOIDk5wrAxNic0OC40IkU!5e0!3m2!1sid!2sid!4v1778262278859!5m2!1sid!2sid" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="mt-8">
+
+    </div>
+  </section>
+
+  <section class="py-24 px-6 max-w-4xl mx-auto text-center">
+    <h2 class="title-font text-5xl gold mb-12">Amplop Digital</h2>
+    <div class="glass rounded-3xl p-10">
+      <p class="mb-4 text-gray-300 italic">BRI A/N MELINDA SINAGA</p>
+      <h3 id="noRek" class="text-xl font-bold mb-6 gold tracking-widest">782301014968530</h3>
+      <button onclick="copyRek()" class="bg-yellow-600 hover:bg-yellow-500 transition px-8 py-3 rounded-full text-black font-semibold">
+        Salin Nomor Rekening
+      </button>
+      <p id="copyText" class="mt-5 text-green-400 h-5 font-medium"></p>
+    </div>
+  </section>
+
+  <footer class="py-16 text-center text-gray-500 border-t border-white/10">
+    <h2 class="title-font text-3xl gold mb-4 italic text-white">Amelinda & Fahmi</h2>
+    Terima kasih atas doa & restu Anda.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const guest = params.get('to') || 'Tamu Undangan';
+    document.getElementById('guestName').innerHTML = `Kepada Yth.<br><span class="gold text-2xl font-semibold">${guest}</span>`;
+
+    function openInvitation() {
+      const opening = document.getElementById('opening');
+      opening.classList.add('opacity-0');
+      setTimeout(() => { opening.style.display = 'none'; }, 500);
+      document.getElementById('music').play().catch(e => console.log("Music play blocked"));
+    }
+
+    new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      spaceBetween: 20,
+      centeredSlides: true,
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      pagination: { el: '.swiper-pagination', clickable: true },
+    });
+
+    const targetDate = new Date('May 16, 2026 09:00:00').getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const dist = targetDate - now;
+      const d = Math.floor(dist / 86400000);
+      const h = Math.floor((dist % 86400000) / 3600000);
+      const m = Math.floor((dist % 3600000) / 60000);
+      const s = Math.floor((dist % 60000) / 1000);
+
+      const cd = document.getElementById('countdown');
+      if (cd && dist > 0) {
+        cd.innerHTML = `
+          <div class="glass p-4 rounded-2xl"><div class="text-3xl font-bold gold">${d}</div><div class="text-[10px] text-gray-400 uppercase">Hari</div></div>
+          <div class="glass p-4 rounded-2xl"><div class="text-3xl font-bold gold">${h}</div><div class="text-[10px] text-gray-400 uppercase">Jam</div></div>
+          <div class="glass p-4 rounded-2xl"><div class="text-3xl font-bold gold">${m}</div><div class="text-[10px] text-gray-400 uppercase">Menit</div></div>
+          <div class="glass p-4 rounded-2xl"><div class="text-3xl font-bold gold">${s}</div><div class="text-[10px] text-gray-400 uppercase">Detik</div></div>
+        `;
+      }
+    }, 1000);
+
+    window.addEventListener('scroll', () => {
+      const ind = document.getElementById('scrollIndicator');
+      if (window.scrollY > 100) { ind.style.opacity = '0'; } 
+      else { ind.style.opacity = '1'; }
+    });
+
+    function copyRek() {
+      const rek = document.getElementById('noRek').innerText;
+      navigator.clipboard.writeText(rek);
+      const text = document.getElementById('copyText');
+      text.innerText = 'Nomor rekening berhasil disalin!';
+      setTimeout(() => { text.innerText = ''; }, 3000);
+    }
+  </script>
+</body>
+</html>
