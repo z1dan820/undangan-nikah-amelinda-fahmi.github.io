@@ -89,6 +89,14 @@
       background: rgba(255, 255, 255, 0.1); border-left: 3px solid #DAA520;
       padding: 10px; margin-bottom: 10px; border-radius: 0 10px 10px 0;
     }
+        /* Countdown Style */
+    .countdown-item {
+      background: #800000;
+      border: 1px solid #DAA520;
+      border-radius: 12px;
+      min-width: 65px;
+      padding: 10px 5px;
+    }
   </style>
 </head>
 <body>
@@ -176,7 +184,29 @@
         </div>
       </div>
     </section>
-    
+     <section class="py-12 px-6 text-center">
+      <div class="glass p-8 text-white">
+        <h2 class="title-font text-2xl gold mb-6">Menghitung Hari</h2>
+        <div class="flex justify-center gap-3">
+          <div class="countdown-item">
+            <span id="days" class="block text-2xl font-bold gold">00</span>
+            <span class="text-[10px] uppercase tracking-widest">Hari</span>
+          </div>
+          <div class="countdown-item">
+            <span id="hours" class="block text-2xl font-bold gold">00</span>
+            <span class="text-[10px] uppercase tracking-widest">Jam</span>
+          </div>
+          <div class="countdown-item">
+            <span id="minutes" class="block text-2xl font-bold gold">00</span>
+            <span class="text-[10px] uppercase tracking-widest">Menit</span>
+          </div>
+          <div class="countdown-item">
+            <span id="seconds" class="block text-2xl font-bold gold">00</span>
+            <span class="text-[10px] uppercase tracking-widest">Detik</span>
+          </div>
+        </div>
+      </div>
+    </section>
         <section class="py-20 px-6">
       <h2 class="title-font text-4xl gold text-center mb-10 font-bold">Perjalanan Kami</h2>
       <div>
@@ -316,7 +346,33 @@
       setTimeout(() => { copyText.innerText = ''; }, 2000);
     }
 
-    // 6. RSVP Logic
+        // 6. Countdown Logic
+    const weddingDate = new Date("May 16, 2026 09:00:00").getTime();
+    
+    setInterval(function() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+      document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+      document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+      document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+      
+      if (distance < 0) {
+        clearInterval();
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+      }
+    }, 1000);
+
+    // 7. RSVP Logic
     const rsvpForm = document.getElementById('rsvpForm');
     const wishesList = document.getElementById('wishesList');
 
