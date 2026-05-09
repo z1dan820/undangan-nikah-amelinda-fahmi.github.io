@@ -118,18 +118,30 @@
     <div class="maroon title-font text-xl border-2 border-gold rounded-full w-16 h-16 flex items-center justify-center animate-bounce">A&F</div>
   </div>
 
-  <section id="opening" class="fixed inset-0 z-[110] bg-cover bg-center transition-all duration-1000" style="background-image: url('./bg.jpg');">
-    <div class="absolute inset-0 bg-black/40"></div>
-    <div class="relative z-10 text-white px-6">
-      <p class="text-xs tracking-[5px] mb-4 uppercase">The Wedding of</p>
-      <h1 class="script-font text-6xl mb-12">Amel & Fahmi</h1>
-      <div class="bg-black/20 backdrop-blur-md p-2 rounded-xl border border-white/20 mb-8">
-        <p class="text-[10px] mb-1">Kepada Yth:</p>
-        <h2 id="guestName" class="text-lg font-bold">Tamu Undangan</h2>
-      </div>
-      <button onclick="openInvitation()" class="bg-[#DAA520] px-12 py-3 rounded-full font-bold shadow-xl">Buka Undangan</button>
+<section id="opening" class="fixed inset-0 z-[110] bg-cover bg-center transition-all duration-1000" style="background-image: url('./bg.jpg');">
+  <div class="absolute inset-0 bg-black/30"></div>
+  <div class="relative z-10 text-white px-6 h-dvh flex flex-col justify-between py-12 text-center">
+    
+    <div class="mt-4">
+      <p class="text-[10px] tracking-[4px] mb-2 uppercase opacity-90">The Wedding of</p>
+      <h1 class="script-font text-5xl leading-tight">Amel & Fahmi</h1>
     </div>
-  </section>
+    
+    <div class="flex-grow"></div>
+    
+    <div class="mb-4">
+      <div class="bg-black/30  p-4 rounded-2xl  mb-6 mx-auto max-w-xs">
+        <p class="text-[10px] mb-1 opacity-80 uppercase tracking-widest">Kepada Yth:</p>
+        <h2 id="guestName" class="text-xl font-bold italic">Nama Dan Partner</h2>
+      </div>
+      
+      <button onclick="openInvitation()" class="bg-[#550009] hover:bg-[#550000] px-10 py-3 rounded-full font-bold shadow-2xl active:scale-95 transition-all duration-300">
+        Buka Undangan
+      </button>
+    </div>
+    
+  </div>
+</section>
 
   <audio id="music" loop><source src="2.mp3" type="audio/mpeg"></audio>
 
